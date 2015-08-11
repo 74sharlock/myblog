@@ -1,0 +1,14 @@
+<ul class="list list-unstyled" id="articleList" style="display: block; padding: 0 15px;">
+    <%list.forEach(function(item){%>
+    <li style="display: block;border-bottom: 1px solid #ccc;">
+        <h2><%-item['title']%></h2>
+        <h3><%-item['subtitle']%></h3>
+        <h5>
+            <em style="margin-right: 10px">作者:<%-item['author']%></em>
+            <em style="margin-right: 10px"><%-dateFormat(item['createtime'], 'yyyy-MM-dd hh:mm:ss') %></em>
+            <%if(item['modifytime']!==item['createtime']){%><em>最后修改于<%-dateFormat(item['modifytime'], 'yyyy-MM-dd hh:mm:ss') %></em><%}%>
+        </h5>
+        <p><%-item['content']%></p>
+    </li>
+    <%});%>
+</ul>

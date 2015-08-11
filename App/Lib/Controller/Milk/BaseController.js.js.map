@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "BaseController.js.js",
+  "sourceRoot": "",
+  "sources": [
+    "BaseController.js.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,EAAA,MAAM,CAAC,OAAP,GAAiB,UAAA,CAAW,SAAA,GAAA;AAC3B,IAAA,YAAA,CAAA;WACA;AAAA,MAAA,IAAA,EAAM,SAAC,IAAD,GAAA;eACL,IAAC,CAAA,OAAA,CAAD,CAAO,MAAP,EAAe,IAAf,EADK;MAAA,CAAN;MAF2B;EAAA,CAAX,CAAjB,CAAA;AAAA"
+}

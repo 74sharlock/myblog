@@ -1,0 +1,18 @@
+{
+  "name": "sharlock's blog",
+  "description": "project created by thinkjs",
+  "version": "0.1.0",
+  "author": {},
+  "dependencies": {
+    "thinkjs": "*"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/74sharlock/myblog.git"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "readmeFilename": "README.md"
+}

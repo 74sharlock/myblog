@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "IndexController.js",
+  "sourceRoot": "",
+  "sources": [
+    "IndexController.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,EAAA,YAAA,CAAA;AAAA,EACA,MAAM,CAAC,OAAP,GAAiB,UAAA,CAAW,qBAAX,EAAkC,SAAA,GAAA;WAClD;AAAA,MAAA,WAAA,EAAa,SAAA,GAAA;eACZ,IAAC,CAAA,OAAD,CAAA,EADY;MAAA,CAAb;MADkD;EAAA,CAAlC,CADjB,CAAA;AAAA"
+}

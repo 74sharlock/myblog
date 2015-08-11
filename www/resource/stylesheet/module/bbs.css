@@ -1,0 +1,445 @@
+::-webkit-scrollbar {
+    width: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(255,255,255,.4);
+    border-radius: 4px;
+    box-shadow: 1px 1px 0 rgba(255,255,255,.2) inset;
+}
+
+.forum-main {
+    padding-top: 42px;
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    overflow-x: hidden;
+}
+
+li {
+    list-style:none;
+}
+
+.forum-main.list,
+.forum-main.detail {
+    background-color: #eee;
+}
+
+.forum-main.detail {
+    padding-bottom: 55px;
+}
+
+.forum-main.detail .mobile-header {
+    padding: 0 40px;
+}
+
+.forum-main.detail .mobile-header .detail-title {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.forum-main .mobile-header .fa-pencil-square-o,
+.forum-main .mobile-header .fa-check-square-o {
+    color: #FFF;
+    position: absolute;
+    right: 5px;
+    padding: 0 5px;
+    top: 0;
+    font-size: 1.333em;
+    line-height: 42px;
+}
+
+.forum-category-list {
+    padding-left: 10px;
+    display: inline-block;
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+}
+
+.forum-category-list li {
+    width: 100%;
+    display: inline-block;
+    font-size: 18px;
+}
+
+.forum-category-list li > .li-border {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    border-radius: 50%;
+    font-size: 0;
+    line-height: 0;
+}
+
+.forum-category-list li:active {
+    background: #f0f0f0;
+}
+
+.forum-category-list li a {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 15px 10px;
+    color: #333;
+    line-height: 1em;
+}
+
+.forum-main ul li a,
+.forum-main ul li a:hover,
+.forum-main ul li a:active,
+.forum-main ul li a:focus {
+    text-decoration: none;
+}
+
+.forum-category-list li a > span {
+    margin-right: 10px;
+}
+
+.forum-category-list li a > i.fa-folder,
+.forum-category-list li a > em {
+    font-size: 14px;
+    color: #aaa;
+    font-style: normal;
+}
+
+.forum-category-list li a > i.fa-angle-right {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    color: #cfcfcf;
+    font-size: 24px;
+    margin-top: -12px;
+}
+
+.forum-mask {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    left: 0;
+    top: 42px;
+    z-index: 9999;
+}
+
+.forum-mask i {
+    position: absolute;
+    color: #cfcfcf;
+    font-size: 24px;
+    left: 50%;
+    top: 50%;
+    margin-top: -54px;
+    margin-left: -12px;
+}
+
+.forum-list,
+.forum-floor-list {
+    padding: 10px 10px 0 10px;
+    background-color: #eee;
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+}
+
+.forum-list li,
+.forum-floor-list li {
+    border-radius: 4px;
+    border: 1px solid #d5d5d5;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+.forum-list li:active {
+    background-color: #f8f8f8;
+}
+
+.forum-list li a,
+.forum-floor-list li a {
+    color: #333;
+}
+
+.forum-list li a > p {
+    margin-bottom: 0;
+    font-size: 18px;
+    padding: 15px 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.forum-list li.top a > p:before {
+    display: inline-block;
+    content: '置顶';
+    color: #FFF;
+    background-color: #E11212;
+    padding: 0 5px;
+    border-radius: 2px;
+    font-size: 14px;
+    margin-right: 5px;
+    position: relative;
+    top: -1px;
+}
+
+.forum-list li a > div {
+    padding: 10px;
+    border-top: 1px solid #eaeaea;
+    color: #b8b8b8;
+}
+
+.forum-floor-list li a {
+    cursor: default;
+}
+
+.forum-floor-list li a > div {
+    padding: 10px;
+    border-bottom: 1px solid #eaeaea;
+    color: #9b9b9b;
+}
+
+.forum-floor-list li a > p {
+    margin-bottom: 0;
+    font-size: 16px;
+    padding: 10px;
+    word-break: break-all;
+}
+
+.forum-floor-list li a > p > span.imageList {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+.forum-floor-list li a > p > span.imageList img {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+.forum-floor-list li a > div > span:first-child {
+    color: #0092ef;
+}
+
+.forum-floor-list li.floor-master a > div > span:first-child {
+    position: relative;
+    color: #69bf15;
+    padding-left: 45px;
+}
+
+.forum-floor-list li.floor-master a > div > span:first-child::before,
+.forum-floor-list li.floor-master a > div > span:first-child::after {
+    display: inline-block;
+    position: absolute;
+}
+
+.forum-floor-list li.floor-master a > div > span:first-child::before {
+    left: 0;
+    top: 0;
+    background-color: #77ca26;
+    color: #fff;
+    content: '楼主';
+    padding: 0 5px;
+    border-radius: 2px;
+}
+
+.forum-floor-list li.floor-master a > div > span:first-child::after {
+    top: 50%;
+    left: 38px;
+    content: '';
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    border-top: 5px solid rgba(0, 0, 0, 0);
+    border-left: 6px solid #77CA26;
+    border-bottom: 5px solid rgba(0, 0, 0, 0);
+    margin-top: -4px;
+}
+
+.forum-floor-list li a img {
+    max-width: 100% !important;
+    height: auto !important;
+    text-align: center !important;
+}
+
+.comment-submit-section {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+}
+
+.comment-submit-section .input-group-addon {
+    background-color: #fff;
+    color: #b5b5b5;
+}
+
+.forum-list .no-data-2 {
+    padding: 10px 0;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
+.forum-list .item-next {
+    display: none;
+}
+
+.no-data {
+    border-bottom: none;
+    text-align: center;
+    color: #b5b5b5;
+    width: 160px;
+    margin: 100px auto 0 auto;
+    text-align: center;
+}
+
+.no-data p {
+    font-size: 12px;
+}
+
+.no-data .fa-file-text {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #c7c7c7;
+}
+
+.forum-main.add .form {
+    padding: 20px 10px;
+}
+
+.add-mask {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color:rgba(0,0,0,.3);
+}
+
+.form .form-group.table-row {
+    margin-bottom: 0;
+}
+
+.form .form-group.table-row .form-control {
+    border-radius: 4px 4px 0 0;
+}
+
+.form .form-group.table-row textarea.form-control {
+    resize: none;
+}
+
+.bbs-images {
+    border: 1px solid #ccc;
+    border-top: 0;
+    border-radius: 0 0 4px 4px;
+    background: #fff;
+    padding: 15px 0 15px 10px;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.bbs-add-block {
+    float: left;
+    height: 60px;
+    width: 60px;
+    background: #eee;
+    position: relative;
+    text-align: center;
+    line-height: 60px;
+}
+
+.bbs-add-block i {
+    color: #bebebe;
+    font-size: 32px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -17px;
+    margin-top: -16px;
+}
+
+.bbs-add-block input {
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.forum-comment-image-list {
+    display: inline-block;
+    padding-left: 0;
+    margin: 0;
+    width: auto;
+    float: left;
+}
+
+.forum-comment-image-list li {
+    float: left;
+    width: 60px;
+    height: 60px;
+    margin-right: 12px;
+}
+
+.forum-comment-image-list li > div {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.forum-comment-image-list li > div .view {
+    width: 100%;height: 100%;
+    background: #fff;
+    overflow: hidden;
+}
+
+.forum-comment-image-list li > div > i {
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: #f12020;
+    background: #fff;
+    border-radius: 50%;
+    font-style: normal;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/*.forum-comment-image-list li > div > i:before {*/
+    /*display: inline-block;*/
+    /*content: 'X';*/
+/*}*/
+
+.forum-comment-image-list li img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.forum-comment-image-list li .progress {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    margin-top: -10px;
+    width: 80%;
+}
+
+.forum-comment-image-list li .mask {
+    position: absolute;
+    background-color: rgba(0,0,0,.3);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
