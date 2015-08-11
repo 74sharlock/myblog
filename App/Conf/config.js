@@ -1,6 +1,6 @@
 module.exports = {
   //配置项: 配置值
-  port: 9000, //监听的端口
+  port: 80, //监听的端口
   db_type: 'mysql', // 数据库类型
   db_host: '127.0.0.1', // 服务器地址
   db_port: '3306', // 端口
