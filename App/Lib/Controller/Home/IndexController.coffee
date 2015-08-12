@@ -14,6 +14,10 @@ module.exports = Controller("Home/BaseController", ->
 				self.assign('list', data)
 				self.fetch('chips/articleList.html').then((content)->
 					if self.isPost() is no
+						self.assign(
+							title : '首页'
+							module : 'index'
+						)
 						self.assign('chiparticleList', content)
 						self.display()
 					else

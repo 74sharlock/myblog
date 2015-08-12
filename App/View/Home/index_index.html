@@ -12,27 +12,7 @@
 
 <%-chiparticleList%>
 
-<a class="btn btn-primary" id="btn">查询</a>
-<script src="/resource/script/lib/lib.js" type="text/javascript"></script>
-<script>
-    window.onload = function(){
-        var isSubmitting = false,
-                btn = D('btn');
-        btn.on(click,function(){
-            var self = this;
-            if(!isSubmitting) {
-                isSubmitting = true;
-                self.addClass('disabled');
-                window.history.pushState(null,'首页','/');
-                queryData('/',{},function(data){
-                    console.log(data.data.content);
-                    isSubmitting = false;
-                    self.removeClass('disabled');
-                });
-            }
-        });
-    };
-</script>
+<a class="btn btn-primary" id="btn" data-action="index">查询</a>
 <%include ../public/footer.html %>
 
 
