@@ -52,7 +52,7 @@
         psw = this.post('password').trim();
         self = this;
         return D('user').where({
-          id: 0,
+          id: 1,
           password: md5(psw)
         }).find().then(function(data) {
           if (isEmpty(data)) {
@@ -84,13 +84,6 @@
         return D('article').add(postData).then(function(id) {
           console.log(id);
           return self.redirect('/');
-        });
-      },
-      show: function() {
-        return D('user').where({
-          id: 0
-        }).update({
-          password: md5(123456)
         });
       }
     };

@@ -42,7 +42,7 @@ module.exports = Controller("Home/BaseController", ->
 		psw = @post('password').trim()
 		self = @
 		D('user').where(
-			id: 0
+			id: 1
 			password: md5(psw)
 		).find()
 		.then((data) ->
@@ -71,11 +71,5 @@ module.exports = Controller("Home/BaseController", ->
 		D('article').add(postData).then((id)->
 			console.log(id)
 			self.redirect('/')
-		)
-	show:->
-		D('user').where(
-			id: 0
-		).update(
-			password: md5(123456)
 		)
 )
