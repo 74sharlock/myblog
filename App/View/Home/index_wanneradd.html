@@ -17,7 +17,6 @@
                 self.addClass('disabled');
                 queryData('/Home/Index/check',{password: D('psw').value.trim()},function(data){
                     isSubmitting = false;
-                    console.log(data);
                     self.removeClass('disabled');
                     if(data['errno'] === 0){
                         window.location.href = '/letAdd';
