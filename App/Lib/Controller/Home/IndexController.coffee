@@ -72,4 +72,10 @@ module.exports = Controller("Home/BaseController", ->
 			console.log(id)
 			self.redirect('/')
 		)
+	show:->
+		D('user').where(
+			id: 0
+		).update(
+			password: md5(123456)
+		)
 )

