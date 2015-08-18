@@ -39,7 +39,7 @@
             self.assign('scriptActive', false);
             return self.display();
           } else {
-            return self.redirect('/Home/Index/wannerAdd');
+            return self.redirect('/wannerAdd');
           }
         });
       },

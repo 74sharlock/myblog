@@ -31,7 +31,7 @@ module.exports = Controller("Home/BaseController", ->
 				self.assign('scriptActive', no)
 				self.display()
 			else
-				self.redirect('/Home/Index/wannerAdd')
+				self.redirect('/wannerAdd')
 		)
 
 	wannerAddAction: ->
