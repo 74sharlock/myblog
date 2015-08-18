@@ -11,13 +11,10 @@ module.exports = Controller("Home/BaseController", ->
 					)
 				else
 					self.assign('user', {})
+
 				self.assign('list', data)
 				self.fetch('chips/articleList.html').then((content)->
 					if self.isPost() is no
-						self.assign(
-							title : '首页'
-							module : 'index'
-						)
 						self.assign('chiparticleList', content)
 						self.display()
 					else
@@ -30,13 +27,15 @@ module.exports = Controller("Home/BaseController", ->
 		self = @
 		@session('memberInfo').then((data) ->
 			if data isnt undefined and data['mid'] is 0
-				self.assign('author',data['name'])
+				self.assign('author', data['name'])
+				self.assign('scriptActive', no)
 				self.display()
 			else
 				self.redirect('/Home/Index/wannerAdd')
 		)
 
 	wannerAddAction: ->
+		@assign('scriptActive', no);
 		@display()
 
 	checkAction: ->

@@ -19,10 +19,6 @@
             self.assign('list', data);
             return self.fetch('chips/articleList.html').then(function(content) {
               if (self.isPost() === false) {
-                self.assign({
-                  title: '首页',
-                  module: 'index'
-                });
                 self.assign('chiparticleList', content);
                 return self.display();
               } else {
@@ -40,6 +36,7 @@
         return this.session('memberInfo').then(function(data) {
           if (data !== void 0 && data['mid'] === 0) {
             self.assign('author', data['name']);
+            self.assign('scriptActive', false);
             return self.display();
           } else {
             return self.redirect('/Home/Index/wannerAdd');
@@ -47,6 +44,7 @@
         });
       },
       wannerAddAction: function() {
+        this.assign('scriptActive', false);
         return this.display();
       },
       checkAction: function() {

@@ -17,15 +17,16 @@
 //    }
 //})();
 
-window.onload = function(){
-    window.module = document.body.getAttribute('data-module');
+R(function(){
+    window.module = document.body.gas('data-module');
     if(module){
 
         //模块命名空间,请将全局方法挂载到模块命名空间下
         if(typeof window[window.module] === 'undefined'){
             window[window.module] = {};
         }
-
-        seajs.use('module/'+ module + '/main');
+        if(document.body.gas('data-active') === 'true'){
+            seajs.use('module/'+ module + '/main');
+        }
     }
-};
+});

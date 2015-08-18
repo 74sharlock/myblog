@@ -10,6 +10,13 @@ module.exports = Controller(function(){
         init: function(http){
             this.super("init", http);
             //其他的通用逻辑
+        },
+        __before:function(action){
+            this.assign({
+                title : action,
+                module : action,
+                scriptActive: true
+            });
         }
     }
 });

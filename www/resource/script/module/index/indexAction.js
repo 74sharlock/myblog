@@ -2,11 +2,11 @@
 (function() {
   define(function(require, exports, module) {
     return function() {
-      var As, G, isSubmitting;
+      var As, G, btn, isSubmitting;
       G = window[window.module];
       As = G.actions;
-      console.log(G, As);
       isSubmitting = false;
+      btn = D('btn');
       return D('btn').on(click, function() {
         var self;
         self = this;
