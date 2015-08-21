@@ -12,5 +12,6 @@ module.exports = {
   app_group_list: ['Home', 'Admin', 'Restful', 'Milk'], //分组列表
   deny_group_list: [],
   default_group: 'Home', //默认分组
-  URL_CASE_INSENSITIVE:true
+  URL_CASE_INSENSITIVE:true,
+  db_nums_per_page:10
 };

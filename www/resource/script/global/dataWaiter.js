@@ -1,8 +1,7 @@
-define(function(require,exports,module){
+exports.dataWaiter = function(){
     function dataWaiter(){
         this.node = document.querySelector('.data-waiter') || this.createDom();
     }
-
     dataWaiter.prototype.show = function(){
         var self = this;
         if(!self.node){
@@ -40,5 +39,5 @@ define(function(require,exports,module){
         }
         return this;
     };
-    return new dataWaiter();
-});
+    return dataWaiter;
+};

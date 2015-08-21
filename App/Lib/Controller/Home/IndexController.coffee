@@ -2,7 +2,7 @@ module.exports = Controller("Home/BaseController", ->
 	"use strict"
 	indexAction: ->
 		self = @
-		D('article').page(1).order('modifytime DESC').select().then((data)->
+		D('article').page(if isNumber(parseInt(@post('pageIndex'))) then @post('pageIndex') else 1).order('modifytime DESC').select().then((data)->
 			self.session('memberInfo').then((s)->
 				if not isEmpty(s)
 					self.assign('user',
@@ -15,10 +15,12 @@ module.exports = Controller("Home/BaseController", ->
 				self.assign('list', data)
 				self.fetch('chips/articleList.html').then((content)->
 					if self.isPost() is no
-						self.assign('chiparticleList', content)
+						self.assign('chipArticleList', content)
 						self.display()
 					else
-						self.success({content:content});
+						self.success(
+							content:content
+						);
 				)
 			)
 		)

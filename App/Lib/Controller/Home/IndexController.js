@@ -6,7 +6,7 @@
       indexAction: function() {
         var self;
         self = this;
-        return D('article').page(1).order('modifytime DESC').select().then(function(data) {
+        return D('article').page(isNumber(parseInt(this.post('pageIndex'))) ? this.post('pageIndex') : 1).order('modifytime DESC').select().then(function(data) {
           return self.session('memberInfo').then(function(s) {
             if (!isEmpty(s)) {
               self.assign('user', {
@@ -19,7 +19,7 @@
             self.assign('list', data);
             return self.fetch('chips/articleList.html').then(function(content) {
               if (self.isPost() === false) {
-                self.assign('chiparticleList', content);
+                self.assign('chipArticleList', content);
                 return self.display();
               } else {
                 return self.success({
