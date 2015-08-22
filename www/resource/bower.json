@@ -1,0 +1,16 @@
+{
+  "name": "blog",
+  "version": "0.0.0",
+  "homepage": "https://github.com/74sharlock/myblog",
+  "authors": [
+    "74sharlock <905711341@qq.com>"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "font-awesome": "~4.4.0",
+    "bootstrap": "~3.3.5",
+    "animate.css": "~3.4.0",
+    "littlelib": "https://github.com/74sharlock/littlelib.git",
+    "gsap": "git://github.com/greensock/GreenSock-JS.git#~1.17.0"
+  }
+}

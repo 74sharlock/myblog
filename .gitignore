@@ -5,4 +5,5 @@ output.tar.gz
 sftp-config.json
 /.idea
 npm-debug.log
+/www/resource/bower_components
 /App/Runtime/Data/app.pid
