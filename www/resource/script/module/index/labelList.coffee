@@ -24,11 +24,15 @@ module.exports = (nodeScope)->
 				e.preventDefault()
 				li.removeClass('active') for li in lis
 				thisLi.addClass('active')
+				line.removeClass('hidden').style.top = (index * h) + 'px'
 
 			else
-
-				TweenLite.to(line, 0.35, { top : (index * h) + 'px',  ease: Bounce.easeOut}) if type is 'mouseover'
-				TweenLite.to(line, 0.35, { top : (curIndex * h) + 'px',  ease: Bounce.easeOut}) if type is 'mouseout'
+				if not line.hasClass('hidden')
+					if type is 'mouseover'
+						i = index
+					else if type is 'mouseout'
+						i = curIndex
+					TweenLite.to(line, 0.35, { top : (i * h) + 'px',  ease: Bounce.easeOut})
 
 	event = ['mouseover', click, 'mouseout']
 
