@@ -9,7 +9,7 @@
         if (!isNaN(parseInt(cid))) {
           return D('article').where({
             cat: cid
-          }).order('modifytime DESC').select().then(function(data) {
+          }).page(isNumber(parseInt(this.post('pageIndex'))) ? this.post('pageIndex') : 1).order('modifytime DESC').select().then(function(data) {
             return self.session('memberInfo').then(function(s) {
               if (!isEmpty(s)) {
                 self.assign('user', {

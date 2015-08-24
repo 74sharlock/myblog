@@ -3,23 +3,7 @@
   module.exports = function(nodeScope) {
     var As, isSubmitting;
     As = this.actions;
-    isSubmitting = false;
-    console.log(As);
-    return D('btn').on(click, function() {
-      var self;
-      self = this;
-      if (!isSubmitting) {
-        isSubmitting = true;
-        self.addClass('disabled');
-        return queryData('/', {
-          pageIndex: 2
-        }, function(data) {
-          console.log(data.data.content);
-          isSubmitting = false;
-          return self.removeClass('disabled');
-        });
-      }
-    });
+    return isSubmitting = false;
   };
 
 }).call(this);

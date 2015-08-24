@@ -3,7 +3,7 @@ module.exports = Controller("Article/BaseController", ->
 	indexAction: (cid) ->
 		self = @
 		if not isNaN(parseInt(cid))
-			D('article').where({cat: cid}).order('modifytime DESC').select().then((data)->
+			D('article').where({cat: cid}).page(if isNumber(parseInt(@post('pageIndex'))) then @post('pageIndex') else 1).order('modifytime DESC').select().then((data)->
 
 				self.session('memberInfo').then((s)->
 					if not isEmpty(s)

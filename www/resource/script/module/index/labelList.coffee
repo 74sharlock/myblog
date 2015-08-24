@@ -6,6 +6,9 @@ module.exports = (nodeScope)->
 	line = nodeScope.Q('.line')
 	h = parseInt(getComputedStyle(line)['height'])
 
+	# todo: 这里不知道为什请求不到模块
+	dataWaiter = new require('./global/dataWaiter.js')()
+
 	handler = (e)->
 
 		target = e.target
@@ -25,6 +28,12 @@ module.exports = (nodeScope)->
 				li.removeClass('active') for li in lis
 				thisLi.addClass('active')
 				line.removeClass('hidden').style.top = (index * h) + 'px'
+
+				dataWaiter().show()
+				url = thisLi.Q('a').href
+				queryData url, {}, (res)->
+					dataWaiter.close()
+					console.log(res['data']['content']);
 
 			else
 				if not line.hasClass('hidden')

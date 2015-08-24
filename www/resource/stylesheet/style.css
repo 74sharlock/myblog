@@ -38,7 +38,7 @@
 .label-panel-top {
   height: 200px;
   text-align: center;
-  padding-top: 50px;
+  padding-top: 80px;
   margin-bottom: 60px;
   position: relative;
 }
@@ -89,6 +89,7 @@
   font-weight: 300;
   outline: none;
   border-radius: 3px;
+  box-sizing: border-box;
 }
 .search-block input:hover {
   background: #9fa8da;

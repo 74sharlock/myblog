@@ -1,24 +1,28 @@
 exports.dataWaiter = function(){
-    function dataWaiter(){
-        this.node = document.querySelector('.data-waiter') || this.createDom();
-    }
-    dataWaiter.prototype.show = function(){
-        var self = this;
-        if(!self.node){
-            this.createDom();
-        }
-        self.node.classList.remove('hidden');
-        setTimeout(function(){
-            self.node.classList.add('waiting');
-        });
-    };
-    dataWaiter.prototype.createDom = function(){
+
+    var _createDom = function(){
         var dataWaiter = document.createElement('div');
         dataWaiter.className = "data-waiter hidden";
         dataWaiter.innerHTML = '<i class="fa fa-spinner fa-spin"></i>';
         document.body.appendChild(dataWaiter);
         return dataWaiter;
     };
+
+    var dataWaiter = function(){
+        this.node = document.querySelector('.data-waiter') ||  _createDom.call(this);
+    };
+
+    dataWaiter.prototype.show = function(){
+        var self = this;
+        if(!self.node){
+            _createDom.call(this);
+        }
+        self.node.classList.remove('hidden');
+        setTimeout(function(){
+            self.node.classList.add('waiting');
+        });
+    };
+
     dataWaiter.prototype.close = function(){
         if(this.node){
             this.node.classList.remove('waiting');
