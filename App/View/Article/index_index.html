@@ -1,0 +1,21 @@
+<%include ../public/header.html %>
+
+
+<div class="content-panel" id="contentPanel" data-action="content">
+    <% if(!isEmpty(user)){ %>
+    <a href="/logOut" class="pull-right">退出</a>
+    <% } %>
+
+    <% if(!isEmpty(user) && user.id === 0){ %>
+    <a href="/letAdd" class="pull-right">添加文章</a>
+    <% } %>
+
+    <ul class="list list-unstyled article-list-index" id="articleList">
+        <%-chipArticleList%>
+    </ul>
+
+    <a class="btn btn-primary" id="btn">查询</a>
+
+</div>
+
+<%include ../public/footer.html %>

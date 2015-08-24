@@ -24,7 +24,8 @@
             <ul class="label-list list-unstyled">
                 <%-catListContent%>
             </ul>
-            <div class="line hidden"></div>
+            <div class="line<% if(!thisCId){ %> hidden<% } %>"
+            <%if(thisCId){%> style="top:<%-(thisCId-1) * 77%>px" <%}%>></div>
         </div>
 
         <div class="search-block" data-action="search">

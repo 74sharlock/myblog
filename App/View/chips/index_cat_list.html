@@ -1,0 +1,10 @@
+<% catList.forEach(function(cat){ %>
+<li<%if(thisCId===cat['cid']){ %> class="active"<%}%>>
+    <a href="/article/list/<%-cat['cid']%>.html">
+        <i class="fa <%-cat['icon']%>"></i>
+        <p><%-cat['cat_name']%><br>
+            <em><%-cat['description']%></em>
+        </p>
+    </a>
+</li>
+<% }) %>

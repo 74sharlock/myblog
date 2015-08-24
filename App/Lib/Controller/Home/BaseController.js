@@ -11,7 +11,7 @@ module.exports = Controller(function(){
             var self = this;
             self.super("init", http);
             D('article_cat').select().then(function(data){
-                self.assign({catList: data});
+                self.assign({catList: data, thisCId:null});
                 self.fetch('chips/index_cat_list.html').then(function(content){
                     self.catListContent = content;
                     self.assign({catListContent: content});
