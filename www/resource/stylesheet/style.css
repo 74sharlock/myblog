@@ -33,6 +33,7 @@
   top: 0;
   bottom: 0;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23), 0 3px 10px rgba(0, 0, 0, 0.16);
+  background: #fff;
 }
 .label-panel-top {
   height: 200px;

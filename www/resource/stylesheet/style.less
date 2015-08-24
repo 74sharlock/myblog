@@ -27,18 +27,18 @@
 	background-size: cover;
 }
 .trs(@attr){
-	-webkit-transition: @attr;
-	-moz-transition: @attr;
-	-ms-transition: @attr;
-	-o-transition: @attr;
-	transition: @attr;
+	-webkit-transition+: @attr;
+	-moz-transition+: @attr;
+	-ms-transition+: @attr;
+	-o-transition+: @attr;
+	transition+: @attr;
 }
 .trf(@attr){
-	-webkit-transform: @attr;
-	-moz-transform: @attr;
-	-ms-transform: @attr;
-	-o-transform: @attr;
-	transform: @attr;
+	-webkit-transform+_: @attr;
+	-moz-transform+_: @attr;
+	-ms-transform+_: @attr;
+	-o-transform+_: @attr;
+	transform+_: @attr;
 }
 .filter(@attr){
 	-webkit-filter: @attr;
@@ -55,6 +55,7 @@
 		top: 0;
 		bottom: 0;
 		box-shadow: 0 3px 10px rgba(0,0,0,0.23),0 3px 10px rgba(0,0,0,0.16);
+	  	background: #fff;
 	}
 }
 

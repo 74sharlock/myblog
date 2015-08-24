@@ -1,7 +1,9 @@
 module.exports = (nodeScope)->
-	As = @actions;
+	As = @actions
 
-	isSubmitting = false;
+	isSubmitting = no
+
+	console.log(As)
 
 	D('btn').on(click, ()->
 		self = @;

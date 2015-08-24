@@ -4,6 +4,7 @@
     var As, isSubmitting;
     As = this.actions;
     isSubmitting = false;
+    console.log(As);
     return D('btn').on(click, function() {
       var self;
       self = this;
