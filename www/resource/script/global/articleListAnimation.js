@@ -5,7 +5,7 @@
     newChildrenAnimation = function() {
       var i, item, items, len, results;
       this.innerHTML = newChildrenContent;
-      items = this.QA('a');
+      items = this.QA('li');
       results = [];
       for (i = 0, len = items.length; i < len; i++) {
         item = items[i];
@@ -19,7 +19,7 @@
       return results;
     };
     if (nodeScope) {
-      items = nodeScope.QA('a');
+      items = nodeScope.QA('li');
       if (items.length) {
         results = [];
         for (i = 0, len = items.length; i < len; i++) {

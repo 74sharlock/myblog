@@ -2,7 +2,7 @@ module.exports = (nodeScope, newChildrenContent)->
 
 	newChildrenAnimation = ()->
 		@innerHTML = newChildrenContent
-		items = @QA('a')
+		items = @QA('li')
 		TweenLite.from item, 0.5, {
 			x: -300
 			opacity: 0
@@ -12,7 +12,7 @@ module.exports = (nodeScope, newChildrenContent)->
 		} for item in items
 
 	if nodeScope
-		items = nodeScope.QA('a')
+		items = nodeScope.QA('li')
 
 		if items.length
 
