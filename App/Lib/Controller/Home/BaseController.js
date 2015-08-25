@@ -10,7 +10,7 @@ module.exports = Controller(function(){
         init: function(http){
             var self = this;
             self.super("init", http);
-            D('article_cat').select().then(function(data){
+            D('article_cat').query('select *,(select COUNT(0) from that_article where that_article_cat.cid=that_article.cat) as len from that_article_cat').then(function(data){
                 self.assign({catList: data, thisCId:null});
                 self.fetch('chips/index_cat_list.html').then(function(content){
                     self.catListContent = content;
