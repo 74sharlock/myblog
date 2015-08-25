@@ -1,6 +1,7 @@
 module.exports = [
-    ['wannerAdd', 'Home/Index/wannerAdd'], //规则到具体pathname的映射
+    ['wannerAdd', 'Home/Index/wannerAdd'],
     ['letAdd', 'Home/Index/letAdd'],
     ['logout', 'Home/Index/logOut'],
-    ['list/:cid', 'Article/Index/index']
+    ['list/:cid', 'Article/Index/index'],
+    ['show/:aid', 'Article/Index/show']
 ];

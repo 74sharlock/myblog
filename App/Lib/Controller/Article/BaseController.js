@@ -7,7 +7,7 @@
         var self;
         this["super"]('init', http);
         self = this;
-        return D('article_cat').select().then(function(data) {
+        D('article_cat').query('select *,(select COUNT(0) from that_article where that_article_cat.cid=that_article.cat) as len from that_article_cat').then(function(data) {
           self.assign({
             catList: data,
             thisCId: parseInt(http.get['cid'] || http.post['cid'])
@@ -18,6 +18,16 @@
               catListContent: content
             });
           });
+        });
+        return self.session('memberInfo').then(function(s) {
+          if (!isEmpty(s)) {
+            return self.assign('user', {
+              name: s.name,
+              id: s.mid
+            });
+          } else {
+            return self.assign('user', {});
+          }
         });
       },
       __before: function(action) {

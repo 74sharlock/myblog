@@ -27,7 +27,7 @@ module.exports = (nodeScope)->
 			if type is 'click' or type is 'touchend'
 
 				e.preventDefault()
-				line.removeClass('hidden')
+				line.removeClass('hidden').style.top = index * 77 + 'px'
 
 
 				if not thisLi.hasClass('active')
