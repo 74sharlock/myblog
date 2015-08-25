@@ -34,6 +34,7 @@
   bottom: 0;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23), 0 3px 10px rgba(0, 0, 0, 0.16);
   background: #fff;
+  z-index: 1;
 }
 .label-panel-top {
   height: 200px;

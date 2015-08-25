@@ -1,4 +1,4 @@
-exports.dataWaiter = function(){
+module.exports = function(){
 
     var _createDom = function(){
         var dataWaiter = document.createElement('div');
@@ -43,5 +43,5 @@ exports.dataWaiter = function(){
         }
         return this;
     };
-    return dataWaiter;
+    return new dataWaiter();
 };

@@ -6,8 +6,10 @@ module.exports = (nodeScope)->
 	line = nodeScope.Q('.line')
 	h = parseInt(getComputedStyle(line)['height'])
 
-	# todo: 这里不知道为什请求不到模块
-	dataWaiter = new require('./global/dataWaiter.js')()
+	dataWaiter = require('../../global/dataWaiter.js')
+	liAnimation = require('../../global/articleListAnimation.js')
+
+	dataWaiter = new dataWaiter()
 
 	handler = (e)->
 
@@ -25,15 +27,26 @@ module.exports = (nodeScope)->
 			if type is 'click' or type is 'touchend'
 
 				e.preventDefault()
-				li.removeClass('active') for li in lis
-				thisLi.addClass('active')
-				line.removeClass('hidden').style.top = (index * h) + 'px'
+				line.removeClass('hidden')
 
-				dataWaiter().show()
-				url = thisLi.Q('a').href
-				queryData url, {}, (res)->
-					dataWaiter.close()
-					console.log(res['data']['content']);
+
+				if not thisLi.hasClass('active')
+
+					li.removeClass('active') for li in lis
+					thisLi.addClass('active')
+
+					dataWaiter.show()
+
+					a = thisLi.Q('a')
+					url = a.href
+					title = a.title
+					history.pushState {}, title, url
+					document.title = title + '-sharlock\'s blog'
+
+					queryData url, {}, (res)->
+						dataWaiter.close()
+						liAnimation(D('articleList'), res['data']['content'])
+
 
 			else
 				if not line.hasClass('hidden')

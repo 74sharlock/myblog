@@ -485,8 +485,8 @@ a.mainContainer-bottom-fixed:focus {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,.5);
-    z-index: 999999;
+    z-index: -1;
+    background-color: rgba(255,255,255,.5);
     -webkit-transition: opacity 0.35s ease-in-out;
     -moz-transition: opacity 0.35s ease-in-out;
     -ms-transition: opacity 0.35s ease-in-out;
@@ -496,16 +496,18 @@ a.mainContainer-bottom-fixed:focus {
 
 .data-waiter i.fa.fa-spin {
     position: absolute;
-    font-size: 32px;
-    color: #eaeaea;
+    font-size: 70px;
+    color: #7780B5;
     left: 50%;
     top: 50%;
     margin-right: -16px;
     margin-top: -16px;
+    z-index: 999999;
 }
 
 .data-waiter.waiting {
     opacity: 1;
+    z-index: 99999;
 }
 
 /*wx-share*/
