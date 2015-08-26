@@ -1,5 +1,7 @@
 R(()->
 
+	$('.ui.dropdown').dropdown();
+
 	if CE('div').classList
 
 		window.module = document.body.gas('data-module')

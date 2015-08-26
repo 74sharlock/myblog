@@ -25,7 +25,7 @@
         index = thisLi.index();
         if (type === 'click' || type === 'touchend') {
           e.preventDefault();
-          line.removeClass('hidden');
+          line.removeClass('hidden').style.top = index * 77 + 'px';
           if (!thisLi.hasClass('active')) {
             for (k = 0, len1 = lis.length; k < len1; k++) {
               li = lis[k];

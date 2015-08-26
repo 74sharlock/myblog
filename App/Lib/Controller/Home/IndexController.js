@@ -44,8 +44,23 @@
         });
       },
       wannerAddAction: function() {
-        this.assign('scriptActive', false);
-        return this.display();
+        var self;
+        self = this;
+        return D('article_cat').query('select *,(select COUNT(0) from that_article where that_article_cat.cid=that_article.cat) as len from that_article_cat').then(function(data) {
+          self.assign({
+            catList: data
+          });
+          return self.fetch('chips/index_cat_list.html').then(function(content) {
+            self.catListContent = content;
+            self.assign({
+              catListContent: content
+            });
+            self.assign({
+              module: 'index'
+            });
+            return self.display();
+          });
+        });
       },
       checkAction: function() {
         var psw, self;

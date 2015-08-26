@@ -24,7 +24,7 @@ module.exports = Controller("Article/BaseController", ->
 	showAction: (aid)->
 		self = @
 		if not isNaN(parseInt(aid))
-			D('article').where({cat: parseInt(http.get['aid'] or http.post['aid'])}).find().then((data)->
+			D('article').where({id: parseInt(aid)}).find().then((data)->
 
 				self.assign(
 					module : 'index'

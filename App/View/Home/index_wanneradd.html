@@ -1,32 +1,8 @@
 <%include ../public/header.html %>
 
-<div class="input-group" style="width: 600px;margin: 50px auto">
-    <input type="password" class="form-control" id="psw">
-    <span class="input-group-btn">
-        <a class="btn btn-primary" id="btn">Go</a>
-    </span>
+<div class="ui action input" style="width: 600px;margin: 50px auto" data-action="whoAreYou">
+    <input type="password" id="psw">
+    <button class="ui button primary" id="btn">go</button>
 </div>
-<script>
-    R(function(){
-        var isSubmitting = false,
-                btn = D('btn');
-        btn.on(click,function(){
-            var self = this;
-            if(!isSubmitting) {
-                isSubmitting = true;
-                self.addClass('disabled');
-                queryData('/Home/Index/check',{password: D('psw').value.trim()},function(data){
-                    isSubmitting = false;
-                    self.removeClass('disabled');
-                    if(data['errno'] === 0){
-                        window.location.href = '/letAdd';
-                    } else {
-                        alert(data['errmsg']);
-                    }
-                });
-            }
-        });
-    });
-</script>
 
 <%include ../public/footer.html %>

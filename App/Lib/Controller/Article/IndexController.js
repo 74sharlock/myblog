@@ -33,7 +33,7 @@
         self = this;
         if (!isNaN(parseInt(aid))) {
           return D('article').where({
-            cat: parseInt(http.get['aid'] || http.post['aid'])
+            id: parseInt(aid)
           }).find().then(function(data) {
             self.assign({
               module: 'index',

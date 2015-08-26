@@ -1,28 +1,25 @@
 module.exports = (nodeScope, newChildrenContent)->
 
+	a = (method, items, ease, x, fn)->
+		TweenLite[method](item, 0.5,{
+			x: x
+			opacity: 0
+			ease: ease
+			onComplete: fn
+		}) for item, index in items
+
 	newChildrenAnimation = ()->
 		@innerHTML = newChildrenContent
-		items = @QA('li')
-		TweenLite.from item, 0.5, {
-			x: -300
-			opacity: 0
-			ease: Back.easeOut.config(1.5)
-			onComplete: ()->
+		items = @QA('.content-item')
 
-		} for item in items
+		a 'from', items, Back.easeOut.config(1.5), -600, null
 
 	if nodeScope
-		items = nodeScope.QA('li')
+		items = nodeScope.QA('.content-item')
 
 		if items.length
 
-			TweenLite.to item, 0.5, {
-				x: 300
-				opacity: 0
-				ease: Back.easeIn.config(1.5)
-				onComplete: newChildrenAnimation.bind(nodeScope)
-
-			} for item in items
+			a 'to', items, Back.easeIn.config(1.5), 600, newChildrenAnimation.bind(nodeScope)
 
 		else
 

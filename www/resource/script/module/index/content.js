@@ -3,7 +3,8 @@
   module.exports = function(nodeScope) {
     var As, isSubmitting;
     As = this.actions;
-    return isSubmitting = false;
+    isSubmitting = false;
+    return prettyPrint();
   };
 
 }).call(this);

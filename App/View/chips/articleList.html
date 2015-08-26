@@ -1,12 +1,20 @@
 <%list.forEach(function(item){%>
-<li style="display: block;border-bottom: 1px solid #ccc;">
-    <h2><%-item['title']%></h2>
-    <h3><%-item['subtitle']%></h3>
-    <h5>
-        <em style="margin-right: 10px">作者:<%-item['author']%></em>
-        <em style="margin-right: 10px"><%-dateFormat(item['createtime'], 'yyyy-MM-dd hh:mm:ss') %></em>
-        <%if(item['modifytime']!==item['createtime']){%><em>最后修改于<%-dateFormat(item['modifytime'], 'yyyy-MM-dd hh:mm:ss') %></em><%}%>
-    </h5>
-    <p><%-item['content']%></p>
-</li>
-<%});%>
+<div class="content-item ui card" title="<%-item['title']%>">
+    <div class="content">
+        <a class="header" href="/show/<%-item['id']%>.html"><%-item['title']%></a>
+    </div>
+    <div class="content">
+        <div class="meta">--<%-item['subtitle']%></div>
+        <div class="summary"><%-item['introduce']%>...</div>
+    </div>
+    <div class="extra content">
+        <%if(item['modifytime']!==item['createtime']){%>
+        <span class="right floated">最后修改于<%-dateFormat(item['modifytime'], 'yyyy-MM-dd hh:mm:ss') %></span>
+        <%}%>
+        <span>
+            <i class="fa fa-clock-o"></i>
+            <%-dateFormat(item['createtime'], 'yyyy-MM-dd hh:mm:ss') %>
+        </span>
+    </div>
+</div>
+<%})%>

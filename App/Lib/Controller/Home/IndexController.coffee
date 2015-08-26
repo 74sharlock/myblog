@@ -37,8 +37,16 @@ module.exports = Controller("Home/BaseController", ->
 		)
 
 	wannerAddAction: ->
-		@assign('scriptActive', no);
-		@display()
+		self = @
+		D('article_cat').query('select *,(select COUNT(0) from that_article where that_article_cat.cid=that_article.cat) as len from that_article_cat').then( (data)->
+			self.assign({catList: data});
+			self.fetch('chips/index_cat_list.html').then( (content)->
+				self.catListContent = content;
+				self.assign({catListContent: content});
+				self.assign({module:'index'});
+				self.display()
+			)
+		)
 
 	checkAction: ->
 		psw = @post('password').trim()

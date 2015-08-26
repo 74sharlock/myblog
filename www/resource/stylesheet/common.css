@@ -12,6 +12,12 @@ html,body {
     display: none !important;
 }
 
+pre {
+    padding: 15px 0 !important;
+    font-family: Monaco, Consolas, "Lucida Console", monospace;
+    border-radius: 4px;
+}
+
 a,
 a:link,
 a:hover,

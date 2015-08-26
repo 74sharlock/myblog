@@ -2,6 +2,7 @@
 (function() {
   R(function() {
     var G, action, actionContainer, item, len;
+    $('.ui.dropdown').dropdown();
     if (CE('div').classList) {
       window.module = document.body.gas('data-module');
       if (window.module) {

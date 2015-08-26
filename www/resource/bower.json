@@ -12,6 +12,7 @@
     "animate.css": "~3.4.0",
     "littlelib": "https://github.com/74sharlock/littlelib.git",
     "gsap": "git://github.com/greensock/GreenSock-JS.git#~1.17.0",
-    "semantic-ui": "~2.0.8"
+    "semantic-ui": "~2.0.8",
+    "google-code-prettify": "~1.0.4"
   }
 }

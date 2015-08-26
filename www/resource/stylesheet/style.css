@@ -45,6 +45,7 @@
 }
 .content-panel {
   width: 100%;
+  padding-top: 50px;
 }
 .avatar {
   display: inline-block;
@@ -58,6 +59,9 @@
   left: 50%;
   margin-left: -60px;
   bottom: -60px;
+}
+.article-list-index .card {
+  width: 100% !important;
 }
 .search-block {
   position: absolute;
