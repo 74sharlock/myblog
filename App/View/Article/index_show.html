@@ -2,21 +2,21 @@
 
 
 <div class="content-panel" id="contentPanel" data-action="content">
-    <% if(!isEmpty(user)){ %>
+    <!--<% if(!isEmpty(user)){ %>
     <a href="/logOut" class="pull-right">退出</a>
     <% } %>
 
     <% if(!isEmpty(user) && user.id === 0){ %>
     <a href="/letAdd" class="pull-right">添加文章</a>
-    <% } %>
+    <% } %>-->
 
     <div class="article-list-index ui cards" id="articleList">
-        <div class="content-item ui card" title="<%-item['title']%>">
+        <div class="content-item ui card">
             <div class="content">
                 <a class="header"><%-item['title']%></a>
             </div>
-            <div class="content">
-                <div class="meta">--<%-item['subtitle']%></div>
+            <div class="content this-content">
+                <div class="meta"><%-item['subtitle']%></div>
                 <div class="summary"><%-item['content']%></div>
             </div>
             <div class="extra content">
@@ -28,6 +28,7 @@
                     <%-dateFormat(item['createtime'], 'yyyy-MM-dd hh:mm:ss') %>
                 </span>
             </div>
+            <a class="ui button teal back" href="/list/<%-item['cat']-%>.html" data-method="back" data-title="<%-item['cat_name']%>">返回</a>
         </div>
     </div>
 

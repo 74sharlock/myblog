@@ -2,7 +2,9 @@ module.exports = Controller("Home/BaseController", ->
 	"use strict"
 	indexAction: ->
 		self = @
-		D('article').page(if isNumber(parseInt(@post('pageIndex'))) then @post('pageIndex') else 1).order('modifytime DESC').select().then((data)->
+		D('article')
+		#.page(if isNumber(parseInt(@post('pageIndex'))) then @post('pageIndex') else 1)
+		.order('modifytime DESC').select().then((data)->
 			self.session('memberInfo').then((s)->
 				if not isEmpty(s)
 					self.assign('user',

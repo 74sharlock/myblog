@@ -7,7 +7,6 @@ module.exports = (nodeScope)->
 	h = parseInt(getComputedStyle(line)['height'])
 
 	dataWaiter = require('../../global/dataWaiter.js')
-	liAnimation = require('../../global/articleListAnimation.js')
 
 	dataWaiter = new dataWaiter()
 
@@ -29,7 +28,6 @@ module.exports = (nodeScope)->
 				e.preventDefault()
 				line.removeClass('hidden').style.top = index * 77 + 'px'
 
-
 				if not thisLi.hasClass('active')
 
 					li.removeClass('active') for li in lis
@@ -40,13 +38,10 @@ module.exports = (nodeScope)->
 					a = thisLi.Q('a')
 					url = a.href
 					title = a.title
-					history.pushState {}, title, url
-					document.title = title + '-sharlock\'s blog'
 
-					queryData url, {}, (res)->
-						dataWaiter.close()
-						liAnimation(D('articleList'), res['data']['content'])
-
+					require('../../global/getContent.js')(url, title, index, no, ()->
+						dataWaiter.close();
+					)
 
 			else
 				if not line.hasClass('hidden')

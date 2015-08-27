@@ -1,8 +1,9 @@
 R(()->
 
-	$('.ui.dropdown').dropdown();
-
 	if CE('div').classList
+
+		require('./global/historyChange')()
+		require('./global/semanticUi')()
 
 		window.module = document.body.gas('data-module')
 

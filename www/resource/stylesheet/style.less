@@ -70,7 +70,7 @@
 
 .content-panel {
 	width: 100%;
-  	padding-top: 50px;
+  	padding: 50px 0;
 }
 
 .avatar {
@@ -87,6 +87,29 @@
 
 .article-list-index .card {
   	width: 100% !important;
+	font-size: 16px !important;
+	position: relative;
+  	.meta {
+	  	padding: 0.5em 1em;
+	  	border-radius: 4px;
+	  	margin-bottom: 10px;
+	}
+  	.summary {
+	  	text-indent: 2em;
+	  	pre {
+		  	text-indent: 0;
+		}
+	}
+	.back.ui.button {
+		position: absolute;
+		width: auto;
+		right: 10px;
+		top: 10px;
+		border-radius: .28571429rem!important;
+	}
+	.this-content {
+		position: relative;
+	}
 }
 
 .search-block {
@@ -183,6 +206,7 @@
 		top: 0;
 		width: 5px;
 		background: @lightPrimaryColor;
+		.trs(top 0.35 ease)
 	}
 }
 .article-list-index {

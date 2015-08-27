@@ -2,8 +2,9 @@
 (function() {
   R(function() {
     var G, action, actionContainer, item, len;
-    $('.ui.dropdown').dropdown();
     if (CE('div').classList) {
+      require('./global/historyChange')();
+      require('./global/semanticUi')();
       window.module = document.body.gas('data-module');
       if (window.module) {
         if (typeof window[window.module] === 'undefined') {

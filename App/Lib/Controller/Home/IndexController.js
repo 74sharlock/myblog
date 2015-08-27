@@ -6,7 +6,7 @@
       indexAction: function() {
         var self;
         self = this;
-        return D('article').page(isNumber(parseInt(this.post('pageIndex'))) ? this.post('pageIndex') : 1).order('modifytime DESC').select().then(function(data) {
+        return D('article').order('modifytime DESC').select().then(function(data) {
           return self.session('memberInfo').then(function(s) {
             if (!isEmpty(s)) {
               self.assign('user', {

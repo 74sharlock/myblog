@@ -7,9 +7,7 @@
         var self;
         self = this;
         if (!isNaN(parseInt(cid))) {
-          return D('article').where({
-            cat: cid
-          }).page(isNumber(parseInt(this.post('pageIndex'))) ? this.post('pageIndex') : 1).order('modifytime DESC').select().then(function(data) {
+          return D('article').query('select *,(select cat_name from that_article_cat where that_article.cat=that_article_cat.cid) as cat_name from that_article where (`cat` = ' + cid + ') ORDER BY modifytime DESC').then(function(data) {
             self.assign('list', data);
             return self.fetch('chips/articleList.html').then(function(content) {
               if (self.isPost() === false) {
@@ -32,9 +30,8 @@
         var self;
         self = this;
         if (!isNaN(parseInt(aid))) {
-          return D('article').where({
-            id: parseInt(aid)
-          }).find().then(function(data) {
+          return D('article').query('select *,(select cat_name from that_article_cat where that_article.cat=that_article_cat.cid) as cat_name from that_article where (`id` = ' + aid + ') LIMIT 1').then(function(data) {
+            data = data[0];
             self.assign({
               module: 'index',
               item: data

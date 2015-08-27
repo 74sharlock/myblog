@@ -1,10 +1,10 @@
 <%list.forEach(function(item){%>
-<div class="content-item ui card" title="<%-item['title']%>">
+<div class="content-item ui card" title="<%-item['title']%>" data-cat="<%-thisCId%>" data-cat-name="<%-item['cat_name']%>">
     <div class="content">
-        <a class="header" href="/show/<%-item['id']%>.html"><%-item['title']%></a>
+        <a class="header link" href="/show/<%-item['id']%>.html" data-method="link" title="<%-item['title']%>"><%-item['title']%></a>
     </div>
-    <div class="content">
-        <div class="meta">--<%-item['subtitle']%></div>
+    <div class="content this-content">
+        <div class="meta"><%-item['subtitle']%></div>
         <div class="summary"><%-item['introduce']%>...</div>
     </div>
     <div class="extra content">
