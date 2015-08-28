@@ -437,7 +437,8 @@
 	    contentBlock.Q('.summary').innerHTML = content;
 	    TweenLite.from(contentBlock.Q('.summary'), 1, {
 	      height: 20,
-	      opacity: 0
+	      opacity: 0,
+	      ease: Bounce.easeOut
 	    });
 	    prettyPrint();
 	    loadComments.call(contentBlock);
