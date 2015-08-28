@@ -1,5 +1,7 @@
 module.exports = (nodeScope)->
 
+	that = @
+
 	dataWaiter = new (require('../../global/dataWaiter.js'))()
 	title = nodeScope.title
 	href = nodeScope.href
@@ -10,7 +12,7 @@ module.exports = (nodeScope)->
 		if href isnt location.href
 			dataWaiter.show()
 
-			require('../../global/getContent.js')(href, title, 'index', no, ()->
+			require('../../global/getContent.js').call(that, href, title, no, {}, ()->
 				dataWaiter.close()
 			)
 

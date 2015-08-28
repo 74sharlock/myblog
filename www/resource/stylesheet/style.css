@@ -72,6 +72,7 @@
 }
 .article-list-index .card .summary {
   text-indent: 2em;
+  overflow: hidden;
 }
 .article-list-index .card .summary pre {
   text-indent: 0;

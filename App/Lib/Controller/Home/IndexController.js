@@ -6,7 +6,7 @@
       indexAction: function() {
         var self;
         self = this;
-        return D('article').order('modifytime DESC').select().then(function(data) {
+        return D('article').query('select *,(select cat_name from that_article_cat where that_article.cat=that_article_cat.cid) as cat_name from that_article ORDER BY modifytime DESC').then(function(data) {
           return self.session('memberInfo').then(function(s) {
             if (!isEmpty(s)) {
               self.assign('user', {

@@ -3,8 +3,6 @@
   R(function() {
     var G, action, actionContainer, item, len;
     if (CE('div').classList) {
-      require('./global/historyChange')();
-      require('./global/semanticUi')();
       window.module = document.body.gas('data-module');
       if (window.module) {
         if (typeof window[window.module] === 'undefined') {
@@ -12,6 +10,9 @@
         }
         G = window[window.module];
         G.actions = {};
+        G.isShowing = false;
+        require('./global/historyChange').call(G);
+        require('./global/semanticUi').call(G);
         if (document.body.gas('data-active') === 'true') {
           actionContainer = document.querySelectorAll('[data-action]');
           len = actionContainer.length;

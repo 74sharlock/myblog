@@ -2,9 +2,6 @@ R(()->
 
 	if CE('div').classList
 
-		require('./global/historyChange')()
-		require('./global/semanticUi')()
-
 		window.module = document.body.gas('data-module')
 
 		if window.module
@@ -14,6 +11,10 @@ R(()->
 			G = window[window.module]
 
 			G.actions = {}
+			G.isShowing = no
+
+			require('./global/historyChange').call(G)
+			require('./global/semanticUi').call(G)
 
 			if document.body.gas('data-active') is 'true'
 

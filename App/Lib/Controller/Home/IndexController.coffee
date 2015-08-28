@@ -3,8 +3,8 @@ module.exports = Controller("Home/BaseController", ->
 	indexAction: ->
 		self = @
 		D('article')
-		#.page(if isNumber(parseInt(@post('pageIndex'))) then @post('pageIndex') else 1)
-		.order('modifytime DESC').select().then((data)->
+		#.page(if isNumber(parseInt(@post('pageIndex'))) then @post('pageIndex') else 1).order('modifytime DESC').select()
+		.query('select *,(select cat_name from that_article_cat where that_article.cat=that_article_cat.cid) as cat_name from that_article ORDER BY modifytime DESC').then((data)->
 			self.session('memberInfo').then((s)->
 				if not isEmpty(s)
 					self.assign('user',

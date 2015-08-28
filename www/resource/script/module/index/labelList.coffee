@@ -1,6 +1,6 @@
 module.exports = (nodeScope)->
 
-
+	that = @
 	ul = nodeScope.Q('ul')
 	lis = ul.QA('li')
 	line = nodeScope.Q('.line')
@@ -28,7 +28,7 @@ module.exports = (nodeScope)->
 				e.preventDefault()
 				line.removeClass('hidden').style.top = index * 77 + 'px'
 
-				if not thisLi.hasClass('active')
+				if not thisLi.hasClass('active') or location.href.indexOf('show') >= 0
 
 					li.removeClass('active') for li in lis
 					thisLi.addClass('active')
@@ -39,9 +39,9 @@ module.exports = (nodeScope)->
 					url = a.href
 					title = a.title
 
-					require('../../global/getContent.js')(url, title, index, no, ()->
+					require('../../global/getContent.js').call(that, url, title, no, {}, ()->
 						dataWaiter.close();
-					)
+					, {index: index})
 
 			else
 				if not line.hasClass('hidden')
