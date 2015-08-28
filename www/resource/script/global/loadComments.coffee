@@ -9,6 +9,8 @@ module.exports = ()->
 
 	if D('commentsPlugin')
 
+		delete window['uyan_loaded'] if window['uyan_loaded']
+		delete window['uyan_loadover'] if window['uyan_loadover']
 		window['UYAN'].init()
 
 	else

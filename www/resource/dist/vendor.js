@@ -479,6 +479,12 @@
 	    div.innerHTML = '<div class="ui horizontal divider">COMMENTS</div><div id="uyan_frame"></div>';
 	    this.appendChild(div);
 	    if (D('commentsPlugin')) {
+	      if (window['uyan_loaded']) {
+	        delete window['uyan_loaded'];
+	      }
+	      if (window['uyan_loadover']) {
+	        delete window['uyan_loadover'];
+	      }
 	      return window['UYAN'].init();
 	    } else {
 	      script = CE('script');
