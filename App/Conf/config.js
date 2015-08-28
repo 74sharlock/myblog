@@ -2,11 +2,11 @@ module.exports = {
   //配置项: 配置值
   port: 80, //监听的端口
   db_type: 'mysql', // 数据库类型
-  db_host: 'www.sharlock.xyz', // 服务器地址
+  db_host: '127.0.0.1', // 服务器地址
   db_port: '3306', // 端口
   db_name: 'blog', // 数据库名
-  db_user: 'sharlock', // 用户名
-  db_pwd: '!@#012358', // 密码
+  db_user: 'root', // 用户名
+  db_pwd: '', // 密码
   db_prefix: 'that_', // 数据库表前缀
 
   app_group_list: ['Home', 'Article', 'Restful', 'Milk'], //分组列表
