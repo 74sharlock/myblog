@@ -43,11 +43,7 @@
   margin-bottom: 60px;
   position: relative;
 }
-.content-panel {
-  width: 100%;
-  padding: 50px 0;
-}
-.avatar {
+.label-panel-top .avatar {
   display: inline-block;
   width: 120px;
   height: 120px;
@@ -59,6 +55,14 @@
   left: 50%;
   margin-left: -60px;
   bottom: -60px;
+}
+.that-comments-block,
+.that-comments-block * {
+  box-sizing: content-box;
+}
+.content-panel {
+  width: 100%;
+  padding: 50px 0;
 }
 .article-list-index .card {
   width: 100% !important;

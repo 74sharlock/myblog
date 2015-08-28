@@ -1,3 +1,5 @@
+loadComments = require('./loadComments.js')
+
 module.exports = (contentBlock, catId , content)->
 
 	card = @
@@ -9,6 +11,8 @@ module.exports = (contentBlock, catId , content)->
 	contentBlock.Q('.summary').innerHTML = content
 	TweenLite.from(contentBlock.Q('.summary'), 1, {height:20, opacity:0})
 	prettyPrint()
+
+	loadComments.call(contentBlock)
 
 	backButton = CE('a')
 	backButton.className = 'ui button teal back'

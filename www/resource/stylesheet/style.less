@@ -66,23 +66,27 @@
   	padding-top: 80px;
 	margin-bottom: 60px;
 	position: relative;
+	.avatar {
+		display: inline-block;
+		width: 120px;
+		height: 120px;
+		border-radius: 50%;
+		.imageAdaptive('/resource/images/avatar2.png');
+		position: absolute;
+		left: 50%;
+		margin-left: -60px;
+		bottom: -60px;
+	}
+}
+
+.that-comments-block,
+.that-comments-block *, {
+	box-sizing: content-box;
 }
 
 .content-panel {
 	width: 100%;
   	padding: 50px 0;
-}
-
-.avatar {
-	display: inline-block;
-	width: 120px;
-	height: 120px;
-	border-radius: 50%;
-	.imageAdaptive('/resource/images/avatar2.png');
-	position: absolute;
-	left: 50%;
-	margin-left: -60px;
-	bottom: -60px;
 }
 
 .article-list-index .card {
